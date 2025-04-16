@@ -2,7 +2,7 @@ import { div } from 'framer-motion/client'
 
 export function DishCard() {
   return (
-    <article className="bg-gray-400 flex-col max-w-fit px-8 py-3">
+    <article className="bg-gray-400 flex-col max-w-fit px-8 py-3 justify-center">
       <img src="https://picsum.photos/200" alt="test" />
 
       <footer>
