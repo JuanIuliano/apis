@@ -5,15 +5,14 @@ import { Hero } from '../Hero'
 
 export function Main() {
   return (
-    <div className=''>
+    <div className="">
       <Hero></Hero>
-      <div className='flex flex-row flex-grow max-w-6xl mx-auto min-h-screen'>
-        <div className='flex flex-col mx-auto flex-grow'>
+      <div className="flex flex-row flex-grow max-w-6xl mx-auto min-h-screen mt-10">
+        <div className="flex flex-col mx-auto flex-grow">
           <Aside></Aside>
         </div>
-        <main className="bg-slate-200 flex flex-col justify-center">
-          <h3 className='text-center'>Platos</h3>
-          <div className='flex flex-row flex-wrap justify-center'>
+        <main className="bg-primary flex flex-col justify-center">
+          <div className="flex flex-row flex-wrap justify-center gap-10 border-r-2 border-accent">
             <DishCard></DishCard>
             <DishCard></DishCard>
             <DishCard></DishCard>
@@ -23,13 +22,10 @@ export function Main() {
             <DishCard></DishCard>
             <DishCard></DishCard>
             <DishCard></DishCard>
-            <DishCard></DishCard>  
           </div>
         </main>
       </div>
       <Footer></Footer>
     </div>
-
-    
   )
 }

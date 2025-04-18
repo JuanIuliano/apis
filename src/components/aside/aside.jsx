@@ -2,9 +2,7 @@ import { Navbar } from './nav'
 
 export function Aside() {
   return (
-   
-    <aside className="hidden md:flex md:flex-col md:m-auto md:items-center md:bg-slate-800 md:h-full">
-      <h1 className='text-center'>ASIDE</h1>
+    <aside className="hidden md:flex md:flex-col md:m-auto md:items-center md:bg-primary md:h-full border-l-2 border-r-2 border-accent p-5 ">
       <Navbar></Navbar>
     </aside>
   )
