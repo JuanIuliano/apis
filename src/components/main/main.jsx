@@ -11,8 +11,8 @@ export function Main() {
         <div className="flex flex-col mx-auto flex-grow">
           <Aside></Aside>
         </div>
-        <main className="bg-primary flex flex-col justify-center">
-          <div className="flex flex-row flex-wrap justify-center gap-10 border-r-2 border-accent">
+        <main className="bg-primary flex flex-col content-center">
+          <div className="flex flex-row flex-wrap justify-center gap-10 border-r-2 border-transparent md:border-accent">
             <DishCard></DishCard>
             <DishCard></DishCard>
             <DishCard></DishCard>
