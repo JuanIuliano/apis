@@ -1,3 +1,4 @@
+import { MobileNav } from './mobileNav'
 import { Navbar } from './nav'
 
 export function Aside() {

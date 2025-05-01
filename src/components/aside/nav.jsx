@@ -12,11 +12,13 @@ export function Navbar() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [scrolled])
+  }, [])
 
   return (
     <nav
-      className={`flex flex-col h-[400px] gap-3 align-middle justify-center ${scrolled ? 'sticky top-1/4' : 'sticky top-0'}`}
+      className={`flex flex-col h-[400px] gap-3 align-middle justify-center
+        transition-all duration-1000 ${scrolled ? 'sticky top-1/4' : 'sticky top-0'}
+`}
     >
       <NavButton text="Entradas"></NavButton>
       <NavButton text="Parrilla"></NavButton>
