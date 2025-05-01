@@ -5,7 +5,7 @@ import { Hero } from '../Hero'
 
 export function Main() {
   return (
-    <div className="">
+    <div className="scroll-smoot">
       <Hero></Hero>
       <div className="flex flex-row flex-grow max-w-6xl mx-auto min-h-screen mt-10 relative">
         <div className="flex flex-col mx-auto ">
