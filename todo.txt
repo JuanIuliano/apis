@@ -1,0 +1,8 @@
+-mejorar responsive (cuando haces zoom alejando el aside se alarga)
+-ver bien el bg color del nav sticky en mobile (si es que lo dejamos)
+-que la transicion del nav desktop cuando se queda sticky y va a al medio no sea tan villera (no es prioridad)
+-ver como hacemos para que dentro del main los platos se dividan por secciones -> cargar el json
+-hacer que los botones sean links a esas secciones
+-ver que hacer con el hero en mobile
+-que los botones se pinten cuando pasas por su respectiva seccion (creo que es un quilombo asi que opcional)
+-hacer que se despliegue un modal cuando haces click en un plato (el modal va a ser una ventanita con toda la info del plato)
