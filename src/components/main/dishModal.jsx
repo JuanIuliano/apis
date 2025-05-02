@@ -2,11 +2,19 @@ import { useEffect } from 'react'
 import { FaTimes, FaLeaf } from 'react-icons/fa'
 
 export function DishModal({ plato, onClose }) {
-  console.log(plato)
+  {
+    /*Este useEffect se utiliza para que cuando cargue el modal, no se pueda interactuar con el resto de la página que queda de fondo*/
+  }
   useEffect(() => {
     document.body.style.overflow = 'hidden'
     return () => (document.body.style.overflow = 'auto')
   }, [])
+
+  {
+    /* El modal renderiza un div fixed inset-0 (ocupa todo), despues otro div que ocupa todo al que se le pone el fondo negro difuminado
+    después el article que ya es el modal en si. Recible el plato que se asigno en el estado gracias al onClick de dishCard
+    y recibe la función para cerrar la modal (cambia el estado de dish_ a null en main)*/
+  }
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-[100]">
@@ -66,7 +74,11 @@ export function DishModal({ plato, onClose }) {
               <h3 className="font-tittle text-xl text-accent font-semibold mb-1 flex items-center">
                 <FaLeaf className="mr-2" /> Ingredientes
               </h3>
-              <p>{plato.ingredients.length > 0 ? plato.ingredients.join(', ') : 'No contamos con los ingredientes'}</p>
+              <p>
+                {plato.ingredients.length > 0
+                  ? plato.ingredients.join(', ')
+                  : 'No contamos con los ingredientes'}
+              </p>
             </div>
 
             <div>
@@ -74,7 +86,9 @@ export function DishModal({ plato, onClose }) {
                 Alérgenos
               </h3>
               <p className="font-body text-text">
-                {plato.allergens.length > 0 ? plato.allergens.join(', ') : 'No contiene alérgenos comunes'}
+                {plato.allergens.length > 0
+                  ? plato.allergens.join(', ')
+                  : 'No contiene alérgenos comunes'}
               </p>
             </div>
           </div>

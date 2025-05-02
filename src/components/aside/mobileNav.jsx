@@ -1,8 +1,16 @@
 import { NavButton } from './navButton'
 import { useStickyObserver } from '../../hooks/useIntersection'
 export function MobileNav() {
+  {
+    /*Componente del nav mobile*/
+  }
   const { isSticky, stickyRef } = useStickyObserver()
   const bg = isSticky ? 'white' : 'secondary'
+  {
+    /*Esta función asigna la ref devuelta por el custom hook 'useStickyOberver al nav
+    cuando el nav está sticky, el custom hook lo detecta y cambia el estado de isSticky a true
+    cuando el estado es true, el color de los botones y el bg del nav cambian para mejor visibilidad*/
+  }
   return (
     <nav
       ref={stickyRef}
