@@ -66,7 +66,7 @@ export function DishModal({ plato, onClose }) {
               <h3 className="font-tittle text-xl text-accent font-semibold mb-1 flex items-center">
                 <FaLeaf className="mr-2" /> Ingredientes
               </h3>
-              <p>{plato.ingridients}</p>
+              <p>{plato.ingredients.length > 0 ? plato.ingredients.join(', ') : 'No contamos con los ingredientes'}</p>
             </div>
 
             <div>
@@ -74,7 +74,7 @@ export function DishModal({ plato, onClose }) {
                 Alérgenos
               </h3>
               <p className="font-body text-text">
-                {plato.allergens || 'No contiene alérgenos comunes'}
+                {plato.allergens.length > 0 ? plato.allergens.join(', ') : 'No contiene alérgenos comunes'}
               </p>
             </div>
           </div>

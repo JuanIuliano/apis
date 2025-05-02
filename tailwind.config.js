@@ -14,7 +14,7 @@ export default {
         body: ['Lato', 'sans-serif'],
       },
       backgroundImage: {
-        hero: "url('/src/assets/hero.png')",
+        hero: "url('/src/assets/hero3.jpg')",
       },
     },
   },

@@ -21,19 +21,19 @@ export function Main() {
     <div className="scroll-smooth">
       <Hero></Hero>
       <div
-        className="flex-col md:flex md:flex-row flex-grow max-w-6xl mx-auto mt-10 relative justify-center"
+        className="flex-col md:flex md:flex-row flex-grow mx-auto mt-10 relative justify-center"
         id="menu"
       >
-        <div className="flex flex-col mx-auto md:min-w-fit mb-[10%] md:mb-0 sticky top-0">
+        <div className="flex flex-col md:min-w-fit mb-[10%] md:mb-0 sticky top-0">
           <Aside></Aside>
           <MobileNav></MobileNav>
         </div>
         {dish_ && (
           <DishModal plato={dish_} onClose={() => setDish(null)}></DishModal>
         )}
-        <main className="bg-primary flex flex-col content-center border-r-2 max-w-6xl p-2 border-transparent md:border-accent">
+        <main className="bg-primary flex flex-col content-center border-r-2 max-w-6xl p-8 border-transparent md:border-accent">
           {menu.map((categoryData, categoryIndex) => (
-            <div key={categoryIndex} id={categoryData.category.toLowerCase()}>
+            <div key={categoryIndex} id={categoryData.category.toLowerCase()} className='scroll-mt-[100px]'>
               <h2 className="text-2xl text-center font-tittle text-text mb-5">
                 {categoryData.category}
               </h2>
