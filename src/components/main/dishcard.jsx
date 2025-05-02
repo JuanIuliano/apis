@@ -8,6 +8,11 @@ export function DishCard({ dish, setDish }) {
     price_ars,
     price_usd,
   } = dish
+  {
+    /* Esta función recibe como parámetro el objeto dish que contiene todos los datos del plato y los utiliza para renderizar las dishCards
+    Además recibe una función setDish que se ejecuta con el evento onClick
+    esta función cambia el estado de dish_ en main, por el plato en cuestión (sirve para abrir las modals)*/
+  }
   return (
     <article
       className="

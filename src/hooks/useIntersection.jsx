@@ -18,7 +18,5 @@ export const useStickyObserver = () => {
     return () => observer.disconnect()
   }, [])
 
-  console.log(isSticky)
-
   return { isSticky, stickyRef }
 }

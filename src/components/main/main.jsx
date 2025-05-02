@@ -34,7 +34,11 @@ export function Main() {
         )}
         <main className="bg-primary flex flex-col content-center border-r-2 max-w-6xl p-8 border-transparent md:border-accent">
           {menu.map((categoryData, categoryIndex) => (
-            <div key={categoryIndex} id={categoryData.category.toLowerCase()} className='scroll-mt-[100px]'>
+            <div
+              key={categoryIndex}
+              id={categoryData.category.toLowerCase()}
+              className="scroll-mt-[100px]"
+            >
               <h2 className="text-3xl text-center font-tittle text-text mb-5">
                 {categoryData.category}
               </h2>
