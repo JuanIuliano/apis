@@ -12,12 +12,12 @@ export function MobileNav() {
           : 'bg-primary border-t border-b border-accent'
       } md:hidden flex min-w-full flex-row overflow-scroll gap-[5%] pl-2 sticky top-0 z-50`}
     >
-      <NavButton text="Entradas" bg={bg}></NavButton>
-      <NavButton text="Parrilla" bg={bg}></NavButton>
+      <NavButton text="Entrantes" bg={bg}></NavButton>
+      <NavButton text="Ensaladas" bg={bg}></NavButton>
+      <NavButton text="Platos%20Principales%20-%20Carnes%20Rojas" bg={bg}></NavButton>
       <NavButton text="Pastas" bg={bg}></NavButton>
-      <NavButton text="Pescados" bg={bg}></NavButton>
-      <NavButton text="Bebidas" bg={bg}></NavButton>
       <NavButton text="Postres" bg={bg}></NavButton>
+      <NavButton text="Bebidas%20sin%20Alcohol" bg={bg}></NavButton>
     </nav>
   )
 }

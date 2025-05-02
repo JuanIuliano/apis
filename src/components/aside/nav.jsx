@@ -17,15 +17,14 @@ export function Navbar() {
   return (
     <nav
       className={`flex flex-col h-[400px] gap-3 align-middle justify-center
-        transition-all duration-1000 ${scrolled ? 'sticky top-1/4' : 'sticky top-0'}
-`}
+        transition-all ${scrolled ? 'sticky top-3' : 'sticky top-0'}`}
     >
-      <NavButton text="Entradas"></NavButton>
-      <NavButton text="Parrilla"></NavButton>
+      <NavButton text="Entrantes"></NavButton>
+      <NavButton text="Ensaladas"></NavButton>
+      <NavButton text="Platos%20Principales%20-%20Carnes%20Rojas"></NavButton>
       <NavButton text="Pastas"></NavButton>
-      <NavButton text="Pescados"></NavButton>
-      <NavButton text="Bebidas"></NavButton>
       <NavButton text="Postres"></NavButton>
+      <NavButton text="Bebidas%20sin%20Alcohol"></NavButton>
     </nav>
   )
 }
