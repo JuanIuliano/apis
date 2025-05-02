@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <nav
       className={`flex flex-col h-[400px] gap-3 align-middle justify-center
-        transition-all ${scrolled ? 'sticky top-3' : 'sticky top-0'}`}
+        transition-all ${scrolled ? 'sticky top-14' : 'sticky top-0'}`}
     >
       <NavButton text="Entrantes"></NavButton>
       <NavButton text="Ensaladas"></NavButton>
