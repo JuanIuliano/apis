@@ -15,9 +15,14 @@ export function DishCard({ dish, setDish }) {
   "
       onClick={() => setDish(dish)}
     >
+      {/* <img
+        className="w-[200px] h-[200px] object-cover rounded-lg hover:brightness-110 transition"
+        src= '/dishImages/carnes-blancas/milanesa-pollo-napolitana.png'
+        alt="test"
+      /> */}
       <img
         className="w-[200px] h-[200px] object-cover rounded-lg hover:brightness-110 transition"
-        src="src\assets\hero.png"
+        src={image}
         alt="test"
       />
 

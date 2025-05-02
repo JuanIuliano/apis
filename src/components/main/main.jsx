@@ -7,6 +7,7 @@ import { useStickyObserver } from '../../hooks/useIntersection'
 import { useState, useEffect } from 'react'
 import menuData from '../../assets/categories-dishes.json'
 import { DishModal } from './dishModal'
+// import { DishModal } from '../../../public/categories-dishes.json'
 
 export function Main() {
   const { isSticky, stickyRef } = useStickyObserver()
@@ -34,7 +35,7 @@ export function Main() {
         <main className="bg-primary flex flex-col content-center border-r-2 max-w-6xl p-8 border-transparent md:border-accent">
           {menu.map((categoryData, categoryIndex) => (
             <div key={categoryIndex} id={categoryData.category.toLowerCase()} className='scroll-mt-[100px]'>
-              <h2 className="text-2xl text-center font-tittle text-text mb-5">
+              <h2 className="text-3xl text-center font-tittle text-text mb-5">
                 {categoryData.category}
               </h2>
               <div className="flex flex-row flex-wrap justify-center gap-10 mb-5 border-r-2 border-transparent">

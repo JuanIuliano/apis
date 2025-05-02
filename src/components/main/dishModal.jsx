@@ -23,16 +23,66 @@ export function DishModal({ plato, onClose }) {
         >
           <FaTimes size={24} />
         </button>
+        <div className='flex flex-row justify-evenly gap-4 flex-wrap'>
+          <figure className="w-3/3 aspect-[4/3] xs:w-2/3 xl:w-2/5">
+            <img
+              src={plato.image || 'https://picsum.photos/800/600?food'}
+              alt={plato.name}
+              className="w-full h-full object-cover rounded-lg border border-secondary"
+            />
+          </figure>
+          <div className='w-max-1/2'>
+            <header className="mb-4 border-b border-accent pb-4">
+              <div className="flex flex-row flex-wrap gap-4 justify-between">
+                <h2 className="text-3xl font-tittle text-accent font-bold pt-3 md:pt-0">
+                  {plato.name}
+                </h2>
+                <div className="flex gap-6 pr-6 mt-0">
+                  <div className="text-center">
+                    <p className="font-body text-xl text-black font-normal">
+                      ${plato.price_ars}
+                    </p>
+                    <p className="font-body text-accent">ARS</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-body text-xl text-black font-normal">
+                      ${plato.price_usd}
+                    </p>
+                    <p className="font-body text-accent">USD</p>
+                  </div>
+                </div>
+              </div>
+            </header>
 
-        <figure className="mb-6">
-          <img
-            src={plato.image || 'https://picsum.photos/800/600?food'}
-            alt={plato.name}
-            className="w-full h-64 object-cover rounded-lg border border-secondary"
-          />
-        </figure>
+            <section className="space-y-6">
+              <div>
+                <p className="text-text font-body text-m leading-relaxed">
+                  {plato.description}
+                </p>
+              </div>
 
-        <header className="mb-4 border-b border-accent pb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-tittle text-xl text-accent font-semibold mb-1 flex items-center">
+                    <FaLeaf className="mr-2" /> Ingredientes
+                  </h3>
+                  <p>{plato.ingredients.length > 0 ? plato.ingredients.join(', ') : 'No contamos con los ingredientes'}</p>
+                </div>
+
+                <div>
+                  <h3 className="font-tittle text-xl text-accent font-semibold mb-1">
+                    Alérgenos
+                  </h3>
+                  <p className="font-body text-text">
+                    {plato.allergens.length > 0 ? plato.allergens.join(', ') : 'No contiene alérgenos comunes'}
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        
+        {/* <header className="mb-4 border-b border-accent pb-4">
           <div className="flex flex-row justify-between">
             <h2 className="text-3xl font-tittle text-accent font-bold pt-3 md:pt-0">
               {plato.name}
@@ -78,7 +128,7 @@ export function DishModal({ plato, onClose }) {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <footer className="mt-8 pt-1 border-t border-accent flex justify-end">
           <button

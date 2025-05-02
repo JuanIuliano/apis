@@ -7,7 +7,7 @@
           "description": "Rebanadas de pan tostado con tomate fresco, albahaca y aceite de oliva.",
           "ingredients": ["Pan", "Tomate", "Albahaca", "Aceite de oliva", "Ajo"],
           "allergens": ["Gluten"],
-          "image": "/dishImages/Entradas/bruschettas.png",
+          "image": "url('dishImages/bebidas-con-alcohol/vino-tinto-malbec.png')",
           "price_ars": 1500,
           "price_usd": 1.50
         },
@@ -16,7 +16,7 @@
           "description": "Empanadas tradicionales argentinas rellenas de carne picada y especias.",
           "ingredients": ["Harina", "Carne de res", "Cebolla", "Pimiento", "Especias"],
           "allergens": ["Gluten"],
-          "image": "/dishImages/Entradas/empanada.png",
+          "image": "https://example.com/images/empanadas.jpg",
           "price_ars": 1800,
           "price_usd": 1.80
         },
@@ -25,7 +25,7 @@
             "description": "Empanadas tradicionales argentinas rellenas de jamón y queso.",
             "ingredients": ["Harina", "Jamón", "Queso", "Especias"],
             "allergens": ["Gluten"],
-            "image": "/dishImages/Entradas/empanada.png",
+            "image": "https://example.com/images/empanadas.jpg",
             "price_ars": 1800,
             "price_usd": 1.80
         },
@@ -34,7 +34,7 @@
             "description": "Empanadas tradicionales argentinas de rellenas de Choclo, Crema y Cebolla.",
             "ingredients": ["Harina", "Choclo", "Crema", "Cebolla", "Especias"],
             "allergens": ["Gluten"],
-            "image": "/dishImages/Entradas/empanada.png",
+            "image": "https://example.com/images/empanadas.jpg",
             "price_ars": 1800,
             "price_usd": 1.80
         },
@@ -43,7 +43,7 @@
           "description": "Queso provolone fundido con orégano y aceite de oliva.",
           "ingredients": ["Queso provolone", "Orégano", "Aceite de oliva"],
           "allergens": ["Lácteos"],
-          "image": "/dishImages/Entradas/provoleta.png",
+          "image": "https://example.com/images/provoleta.jpg",
           "price_ars": 2000,
           "price_usd": 2.00
         },
@@ -52,7 +52,7 @@
           "description": "Selección de fiambres y quesos artesanales.",
           "ingredients": ["Jamón", "Salame", "Quesos variados", "Aceitunas"],
           "allergens": ["Lácteos"],
-          "image": "/dishImages/Entradas/tabla-picada.png",
+          "image": "https://example.com/images/tabla_fiambres.jpg",
           "price_ars": 2500,
           "price_usd": 2.50
         }
@@ -66,7 +66,7 @@
                 "description": "Lechuga romana con aderezo César, crutones y queso parmesano.",
                 "ingredients": ["Lechuga romana", "Aderezo César", "Crutones", "Queso parmesano"],
                 "allergens": ["Lácteos", "Gluten", "Huevos"],
-                "image": "/dishImages/Ensaladas/ensalada-boconccino.png",
+                "image": "https://example.com/images/ensalada_cesar.jpg",
                 "price_ars": 1700,
                 "price_usd": 1.70
               },
@@ -75,7 +75,7 @@
                 "description": "Quinoa con vegetales asados y vinagreta de limón.",
                 "ingredients": ["Quinoa", "Zanahoria", "Pimiento", "Zucchini", "Limón"],
                 "allergens": [],
-                "image": "/dishImages/Ensaladas/ensalada-quinoa.png",
+                "image": "https://example.com/images/ensalada_quinoa.jpg",
                 "price_ars": 1800,
                 "price_usd": 1.80
               },
@@ -84,7 +84,7 @@
                 "description": "Mezcla de hojas verdes, aceitunas, pepino y queso feta.",
                 "ingredients": ["Lechuga", "Espinaca", "Aceitunas", "Pepino", "Queso feta"],
                 "allergens": ["Lácteos"],
-                "image": "/dishImages/Ensaladas/ensalada-mediterranea.png",
+                "image": "https://example.com/images/ensalada_mediterranea.jpg",
                 "price_ars": 1900,
                 "price_usd": 1.90
               },
@@ -93,7 +93,7 @@
                 "description": "Mezcla de hojas verdes, tomate cherry y queso Burrata.",
                 "ingredients": ["Albahaca", "Tomate", "Queso Burrata"],
                 "allergens": ["Lácteos"],
-                "image": "/dishImages/Ensaladas/ensalada-burrata.png",
+                "image": "https://example.com/images/ensalada_mediterranea.jpg",
                 "price_ars": 1900,
                 "price_usd": 1.90
               },
@@ -102,7 +102,7 @@
                 "description": "Mezcla de hojas verdes, tomate cherry y queso Bocconcino.",
                 "ingredients": ["Albahaca", "Tomate", "Queso Bocconcino"],
                 "allergens": ["Lácteos"],
-                "image": "/dishImages/Ensaladas/ensalada-boconccino.png",
+                "image": "https://example.com/images/ensalada_mediterranea.jpg",
                 "price_ars": 1900,
                 "price_usd": 1.90
               }
@@ -118,7 +118,7 @@
                     "Bife de chorizo"
                 ],
                 "allergens": [],
-                "image": "/dishImages/carnes-rojas/bife-chorizo.png",
+                "image": "https://example.com/images/bife_chorizo.jpg",
                 "price_ars": 4000,
                 "price_usd": 4.00
             },
@@ -129,7 +129,7 @@
                     "Bife de lomo"
                 ],
                 "allergens": [],
-                "image": "/dishImages/carnes-rojas/bife-lomo.png",
+                "image": "https://example.com/images/bife_lomo.jpg",
                 "price_ars": 5000,
                 "price_usd": 5.00
             },
@@ -149,7 +149,7 @@
                     "Huevos",
                     "Lácteos"
                 ],
-                "image": "/dishImages/carnes-rojas/milanesa-napolitana.png",
+                "image": "https://example.com/images/milanesa_napolitana.jpg",
                 "price_ars": 3000,
                 "price_usd": 3.00
             }
@@ -163,7 +163,7 @@
                 "description": "Pechuga de pollo empanada, cubierta con salsa de tomate, jamón y queso mozzarella.",
                 "ingredients": ["Pollo", "Pan rallado", "Salsa de tomate", "Jamón", "Queso mozzarella"],
                 "allergens": ["Gluten", "Lácteos"],
-                "image": "/dishImages/carnes-blancas/milanesa-pollo-napolitana.png",
+                "image": "https://example.com/images/suprema_napolitana.jpg",
                 "price_ars": 2400,
                 "price_usd": 2.40
             },
@@ -172,7 +172,7 @@
                 "description": "Trozos de pollo cocinados en una cremosa salsa de curry, servidos con arroz blanco.",
                 "ingredients": ["Pollo", "Curry", "Crema", "Arroz", "Cebolla"],
                 "allergens": ["Lácteos"],
-                "image": "/dishImages/carnes-blancas/pollo-curry.png",
+                "image": "https://example.com/images/pollo_curry.jpg",
                 "price_ars": 2300,
                 "price_usd": 2.30
             },
@@ -181,7 +181,7 @@
                 "description": "Pollo guisado con tomates, cebolla, pimientos y hierbas aromáticas.",
                 "ingredients": ["Pollo", "Tomate", "Cebolla", "Pimientos", "Hierbas"],
                 "allergens": [],
-                "image": "/dishImages/carnes-blancas/pollo-cacciatore.png",
+                "image": "https://example.com/images/pollo_cacciatore.jpg",
                 "price_ars": 2250,
                 "price_usd": 2.25
             },
@@ -190,7 +190,7 @@
                 "description": "Pechuga de pollo a la plancha con salsa de limón y acompañamiento de vegetales.",
                 "ingredients": ["Pollo", "Limón", "Vegetales", "Aceite de oliva"],
                 "allergens": [],
-                "image": "/dishImages/carnes-blancas/pollo-al-limon.png",
+                "image": "https://example.com/images/pollo_limon.jpg",
                 "price_ars": 2150,
                 "price_usd": 2.15
             },
@@ -199,7 +199,7 @@
                 "description": "Trozos de pollo salteados en salsa teriyaki, servidos con arroz y semillas de sésamo.",
                 "ingredients": ["Pollo", "Salsa teriyaki", "Arroz", "Sésamo"],
                 "allergens": ["Soja", "Sésamo"],
-                "image": "/dishImages/carnes-blancas/pollo-teriyaki.png",
+                "image": "https://example.com/images/pollo_teriyaki.jpg",
                 "price_ars": 2350,
                 "price_usd": 2.35
             }
@@ -213,7 +213,7 @@
                 "description": "Filete de salmón a la plancha con salsa de eneldo y puré de papas.",
                 "ingredients": ["Salmón", "Eneldo", "Papas", "Manteca"],
                 "allergens": ["Pescado", "Lácteos"],
-                "image": "/dishImages/pescados/salmon.png",
+                "image": "https://example.com/images/salmon_plancha.jpg",
                 "price_ars": 2600,
                 "price_usd": 2.60
             },
@@ -222,7 +222,7 @@
                 "description": "Filete de merluza al horno con limón y hierbas, acompañado de vegetales al vapor.",
                 "ingredients": ["Merluza", "Limón", "Hierbas", "Vegetales"],
                 "allergens": ["Pescado"],
-                "image": "/dishImages/pescados/filet-merluza-napolitana.png",
+                "image": "https://example.com/images/merluza_horno.jpg",
                 "price_ars": 2400,
                 "price_usd": 2.40
             },
@@ -231,7 +231,7 @@
                 "description": "Arroz cocinado con una variedad de mariscos y azafrán.",
                 "ingredients": ["Arroz", "Camarones", "Mejillones", "Calamares", "Azafrán"],
                 "allergens": ["Mariscos"],
-                "image": "/dishImages/pescados/paella-mariscos.png",
+                "image": "https://example.com/images/paella_mariscos.jpg",
                 "price_ars": 2800,
                 "price_usd": 2.80
             }
@@ -241,7 +241,7 @@
         "category": "Pastas",
         "items": [
           {
-            "name": "Capeletti",
+            "name": "Capeleti",
             "description": "Pasta rellena, típicamente servida con salsa a elección.",
             "ingredients": [
               "Pasta",
@@ -251,7 +251,7 @@
               "Gluten",
               "Huevos"
             ],
-            "image": "/dishImages/Pastas/cappeleti.png",
+            "image": "https://example.com/images/capeleti.jpg",
             "price_ars": 2500,
             "price_usd": 2.50
           },
@@ -267,7 +267,7 @@
               "Gluten",
               "Huevos"
             ],
-            "image": "/dishImages/Pastas/ñoquis.png",
+            "image": "https://example.com/images/ñoquis.jpg",
             "price_ars": 2300,
             "price_usd": 2.30
           },
@@ -280,7 +280,7 @@
             "allergens": [
               "Gluten"
             ],
-            "image": "/dishImages/Pastas/penne-rigatti.png",
+            "image": "https://example.com/images/penne_rigatti.jpg",
             "price_ars": 2200,
             "price_usd": 2.20
           },
@@ -293,12 +293,12 @@
             "allergens": [
               "Gluten"
             ],
-            "image": "/dishImages/Pastas/spaghetti.png",
+            "image": "https://example.com/images/spaghetti.jpg",
             "price_ars": 2200,
             "price_usd": 2.20
           },
           {
-            "name": "Sorrentinos",
+            "name": "Sorrentino",
             "description": "Pasta redonda grande rellena, servida con salsa a elección.",
             "ingredients": [
               "Pasta",
@@ -309,7 +309,7 @@
               "Huevos",
               "Lácteos"
             ],
-            "image": "/dishImages/Pastas/sorrentinos.png",
+            "image": "https://example.com/images/sorrentino.jpg",
             "price_ars": 2600,
             "price_usd": 2.60
           }
@@ -334,7 +334,7 @@
               "Lácteos",
               "Huevos"
             ],
-            "image": "/dishImages/Postre/tiramisu.jpg",
+            "image": "https://example.com/images/tiramisu.jpg",
             "price_ars": 2200,
             "price_usd": 2.20
           },
@@ -354,7 +354,7 @@
               "Huevos",
               "Gluten"
             ],
-            "image": "/dishImages/Postre/volcan.jpg",
+            "image": "https://example.com/images/volcan_chocolate.jpg",
             "price_ars": 2400,
             "price_usd": 2.40
           },
@@ -372,7 +372,7 @@
               "Huevos",
               "Lácteos"
             ],
-            "image": "/dishImages/Postre/flan.jpg",
+            "image": "https://example.com/images/flan.jpg",
             "price_ars": 2000,
             "price_usd": 2.00
           }
@@ -388,7 +388,7 @@
               "Agua"
             ],
             "allergens": [],
-            "image": "/dishImages/bebidas-sin-alcohol/agua-sin-gas.png",
+            "image": "https://example.com/images/agua_sin_gas.jpg",
             "price_ars": 800,
             "price_usd": 0.80
           },
@@ -399,7 +399,7 @@
               "Agua carbonatada"
             ],
             "allergens": [],
-            "image": "/dishImages/bebidas-sin-alcohol/agua-con-gas.png",
+            "image": "https://example.com/images/agua_con_gas.jpg",
             "price_ars": 800,
             "price_usd": 0.80
           },
@@ -414,7 +414,7 @@
               "Saborizantes"
             ],
             "allergens": [],
-            "image": "/dishImages/bebidas-sin-alcohol/pomelo.png",
+            "image": "https://example.com/images/aquarius_pomelo.jpg",
             "price_ars": 900,
             "price_usd": 0.90
           },
@@ -429,7 +429,7 @@
               "Saborizantes"
             ],
             "allergens": [],
-            "image": "/dishImages/bebidas-sin-alcohol/manzana.png",
+            "image": "https://example.com/images/aquarius_manzana.jpg",
             "price_ars": 900,
             "price_usd": 0.90
           },
@@ -445,7 +445,7 @@
               "Cafeína"
             ],
             "allergens": [],
-            "image": "/dishImages/bebidas-sin-alcohol/coca.png",
+            "image": "https://example.com/images/cocacola.jpg",
             "price_ars": 1000,
             "price_usd": 1.00
           },
@@ -461,7 +461,7 @@
               "Cafeína"
             ],
             "allergens": [],
-            "image": "/dishImages/bebidas-sin-alcohol/coca-zero.png",
+            "image": "https://example.com/images/cocacola_zero.jpg",
             "price_ars": 1000,
             "price_usd": 1.00
           }
@@ -479,7 +479,7 @@
             "allergens": [
               "Sulfitos"
             ],
-            "image": "/dishImages/bebidas-con-alcohol/vino-tinto-malbec.png",
+            "image": "https://example.com/images/luigi_bosca_malbec_doc.jpg",
             "price_ars": 12000,
             "price_usd": 12.00
           },
@@ -492,7 +492,7 @@
             "allergens": [
               "Sulfitos"
             ],
-            "image": "/dishImages/bebidas-con-alcohol/red-blend.png",
+            "image": "https://example.com/images/luigi_bosca_red_blend.jpg",
             "price_ars": 10000,
             "price_usd": 10.00
           },
@@ -505,7 +505,7 @@
             "allergens": [
               "Sulfitos"
             ],
-            "image": "/dishImages/bebidas-con-alcohol/vino-tinto-malbec.png",
+            "image": "https://example.com/images/luigi_bosca_malbec_sangre.jpg",
             "price_ars": 14000,
             "price_usd": 14.00
           },
@@ -518,7 +518,7 @@
             "allergens": [
               "Sulfitos"
             ],
-            "image": "/dishImages/bebidas-con-alcohol/cabernet-sauvignon.png",
+            "image": "https://example.com/images/luigi_bosca_cabernet.jpg",
             "price_ars": 10000,
             "price_usd": 10.00
           },
@@ -531,7 +531,7 @@
             "allergens": [
               "Sulfitos"
             ],
-            "image": "/dishImages/bebidas-con-alcohol/vino-blanco-chardonnay.png",
+            "image": "https://example.com/images/luigi_bosca_chardonnay.jpg",
             "price_ars": 9000,
             "price_usd": 9.00
           },
@@ -544,7 +544,7 @@
             "allergens": [
               "Sulfitos"
             ],
-            "image": "/dishImages/bebidas-con-alcohol/vino-tinto-malbec-luigi.png",
+            "image": "https://example.com/images/luigi_bosca_malbec.jpg",
             "price_ars": 9500,
             "price_usd": 9.50
           }
