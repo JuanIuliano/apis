@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { apiFetch } from "../services/api";
 
 // Categorías permitidas (enum)
 const CATEGORY_OPTIONS = [
-  "Entradas",
+  "Entrantes",
   "Ensaladas",
-  "Platos principales - Carnes Rojas",
-  "Platos principales - Carnes Blancas",
-  "Platos principales - Pescado",
+  "Platos Principales - Carnes Rojas",
+  "Platos Principales - Carnes Blancas",
+  "Platos Principales - Pescado",
   "Pastas",
   "Postres",
   "Bebidas sin Alcohol",
   "Bebidas con Alcohol"
 ];
-
+//no escuche
 export default function DishForm({ mode }) {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -31,8 +32,8 @@ export default function DishForm({ mode }) {
 
   useEffect(() => {
     if (mode === "update" && id) {
-      fetch(`http://localhost:3000/api/platos/${id}`)
-        .then(res => res.json())
+      console.log("IDENTIFICADOR",id)
+      apiFetch(`/dishes/${id}`)
         .then(data => {
           setFormData({
             name: data.name || "",
@@ -42,11 +43,15 @@ export default function DishForm({ mode }) {
             image: data.image || "",
             price_ars: data.price_ars || "",
             price_usd: data.price_usd || "",
-            category: data.categories?.[0] || "", // Tomamos solo la primera si hay varias
+            category: data.categories?.[0] || "",
           });
+        })
+        .catch((err) => {
+          console.error(err);
+          navigate("/admin/platos");
         });
     }
-  }, [mode, id]);
+  }, [mode, id, navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,23 +73,29 @@ export default function DishForm({ mode }) {
 
     const payload = {
       ...formData,
-      categories: [formData.category], // Convertimos a array para backend
+      categories: [formData.category], // transformamos category única a array para backend
+      price_ars: parseInt(formData.price_ars),
+      price_usd: parseInt(formData.price_usd)
     };
 
-    const url =
-      mode === "update"
-        ? `http://localhost:3000/api/platos/${id}`
-        : "http://localhost:3000/api/platos";
+    try {
+      if (mode === "update") {
+        await apiFetch(`/dishes/${id}`, {
+          method: "PATCH",
+          body: JSON.stringify(payload),
+        });
+      } else {
+        await apiFetch("/dishes", {
+          method: "POST",
+          body: JSON.stringify(payload),
+        });
+      }
 
-    const method = mode === "update" ? "PUT" : "POST";
-
-    await fetch(url, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    navigate("/admin/platos");
+      navigate("/admin/platos");
+    } catch (err) {
+      console.error("Error al guardar:", err.message);
+      alert("Error al guardar el plato. Revisá los datos o intentá más tarde.");
+    }
   };
 
   return (
@@ -243,7 +254,7 @@ export default function DishForm({ mode }) {
 
 //   useEffect(() => {
 //     if (mode === "update" && id) {
-//       apiFetch(`/platos/${id}`)
+//       apiFetch(`/dishes/${id}`)
 //         .then(data => {
 //           setFormData({
 //             name: data.name || "",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { apiFetch } from "../services/api";
 
 export default function LoginAdmin() {
   const [user, setUser] = useState("");
@@ -17,19 +18,13 @@ export default function LoginAdmin() {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/api/login", {
+      
+      const response = await apiFetch("/auth/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ user, password }),
+        body: JSON.stringify({ username: user, password }),
       });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Credenciales inválidas");
-      }
-
-      localStorage.setItem("adminToken", data.token); // Guardar JWT en localstorage
+      localStorage.setItem("adminToken", response.token); // Guardar JWT en localstorage
       navigate("/admin/platos"); // Redirigir al panel
     } catch (err) {
       setError(err.message);

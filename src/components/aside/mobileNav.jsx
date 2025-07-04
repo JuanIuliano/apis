@@ -23,12 +23,12 @@ export function MobileNav() {
       <NavButton text="Entrantes" bg={bg}></NavButton>
       <NavButton text="Ensaladas" bg={bg}></NavButton>
       <NavButton
-        text="Platos%20Principales%20-%20Carnes%20Rojas"
+        text="CarnesRojas"
         bg={bg}
       ></NavButton>
       <NavButton text="Pastas" bg={bg}></NavButton>
       <NavButton text="Postres" bg={bg}></NavButton>
-      <NavButton text="Bebidas%20sin%20Alcohol" bg={bg}></NavButton>
+      <NavButton text="BebidasSinAlcohol" bg={bg}></NavButton>
     </nav>
   )
 }
