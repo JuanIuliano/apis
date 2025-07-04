@@ -1,8 +1,10 @@
 import {Link} from 'react-router-dom'
 import React from 'react'
+import { apiFetch } from '../../services/api'
 
 export function DishCardAdmin({ dish, setDish }) {
   const {
+    _id,
     name,
     description,
     ingredients,
@@ -15,6 +17,22 @@ export function DishCardAdmin({ dish, setDish }) {
     /* Esta función recibe como parámetro el objeto dish que contiene todos los datos del plato y los utiliza para renderizar las dishCards
     Además recibe una función setDish que se ejecuta con el evento onClick
     esta función cambia el estado de dish_ en main, por el plato en cuestión (sirve para abrir las modals)*/
+  }
+
+  const handleDelete = (id) => {
+    if (window.confirm("¿Estás seguro de que quieres eliminar este plato?")) {
+      apiFetch(`/dishes/${id}`, {
+        method: "DELETE",
+      })
+        .then(() => {
+          alert("Plato eliminado correctamente.")
+          window.location.reload()
+        })
+        .catch((error) => {
+          console.error("Error al eliminar el plato:", error)
+          alert("Error al eliminar el plato. Inténtalo de nuevo más tarde.")
+        })
+    }
   }
   return (
     <article
@@ -44,16 +62,14 @@ export function DishCardAdmin({ dish, setDish }) {
       </footer>
 
       <div className="flex mt-2">
-        <Link to={`/admin/platos/update/${dish.id}`}>
+        <Link to={`/admin/platos/update/${_id}`}>
           <button className="bg-neutral-500 text-textColor px-2 py-1 rounded-md hover:bg-neutral-600 transition">
             Editar
           </button>
         </Link>
-        <Link to={`/admin/platos/delete/${dish.id}`}>
-          <button className="bg-red-500 text-textColor px-2 py-1 rounded-md hover:bg-red-600 transition ml-2">
-            Eliminar
-          </button>
-        </Link>
+        <button className="bg-red-500 text-textColor px-2 py-1 rounded-md hover:bg-red-600 transition ml-2" onClick={() => handleDelete(_id)}>
+          Eliminar
+        </button>
       </div>
     </article>
   )

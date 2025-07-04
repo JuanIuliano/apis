@@ -3,53 +3,80 @@ import { useState, useEffect } from 'react'
 import menuData from '../assets/categories-dishes.json'
 import { DishModal } from '../components/main/dishModal'
 import {Link} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import { apiFetch } from '../services/api';
+import { jwtDecode } from 'jwt-decode'
+
+
 
 export function MainAdmin() {
   const [dish_, setDish] = useState(null)
   const [menu, setMenu] = useState([])
+  const [superAdmin, setSuperAdmin] = useState(false)
+  const navigate = useNavigate();
+
+  // obtener localstorage
+  const token = localStorage.getItem("adminToken")
+  const tokenDecoded = jwtDecode(token)
+  // console.log(tokenDecoded)
+  const id = tokenDecoded.id
+  useEffect(() => {
+    apiFetch(`/users/${id}`,
+      {method: "GET"}
+    )
+      .then((user) => {
+        setSuperAdmin(user.isSuperAdmin);
+      })
+      .catch((err) => {
+        console.error(err);
+        navigate("/admin");
+      });
+  }, [navigate]);
 
   useEffect(() => {
-    setMenu(menuData)
-  }, [])
+    apiFetch("/dishes")
+      .then((res) => {
+        setMenu(res);
+      })
+      .catch((err) => {
+        console.error(err);
+        navigate("/admin");
+      });
+  }, [navigate]);
 
+  const handleLogout = () => {
+    localStorage.removeItem("adminToken");
+    navigate("/admin");
+  };
+  console.log(menu)
   return (
-      <div className='mx-auto'>
-        <Link
-            to="/admin"
-            className = "ml-4"
-        >
-            <button className="bg-neutral-500 text-white px-4 py-2 rounded hover:bg-neutral-600">Salir</button>
-        </Link>
+    <div className='mx-auto'>
+      <div className='flex flex-row p-4'>
+        <button className="bg-neutral-500 text-white px-4 py-2 rounded hover:bg-neutral-600" onClick={handleLogout}>Salir</button>
+        {(superAdmin == true) ? <Link to="/admin/usuarios">
+          <button className="bg-neutral-500 text-white px-4 py-2 rounded hover:bg-neutral-600">Usuarios</button>
+        </Link> : ''}
+
         <Link
             to="/admin/platos/new"
         >
             <button className="bg-green-600 text-white m-8 p-2 rounded hover:bg-green-500">Agregar plato</button>
             
         </Link>
-        <main className="flex flex-col content-center max-w-6xl px-8">
-          {menu.map((categoryData, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              id={categoryData.category.toLowerCase()}
-              className="scroll-mt-[100px]"
-            >
-              <h2 className="text-3xl text-center font-tittle text-text mb-5">
-                {categoryData.category}
-              </h2>
-              <div className="flex flex-row flex-wrap justify-center gap-10 mb-5 border-r-2 border-transparent">
-                {categoryData.items.map((dish, dishIndex) => (
-                  <DishCardAdmin
-                    key={dishIndex}
-                    setDish={setDish}
-                    dish={dish}
-                  ></DishCardAdmin>
-                ))}
-              </div>
-            </div>
-          ))}
-        </main>
       </div>
-    
+      
+      <main className="flex flex-row flex-wrap justify-center gap-10 mb-5 border-r-2 border-transparent max-w-7xl mx-auto">
+        
+        {menu.map((data, index) => (
+            <DishCardAdmin
+                  key={index}
+                  setDish={setDish}
+                  dish={data}
+            ></DishCardAdmin>
+        ))}
+      </main>
+    </div>
+  
   )
 }
 

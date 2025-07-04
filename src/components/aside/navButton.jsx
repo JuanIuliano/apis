@@ -6,9 +6,9 @@ export function NavButton({ text, bg = 'secondary' }) {
 
   let visualizedText = text
 
-  if (text == 'Bebidas%20sin%20Alcohol') {
+  if (text == 'Platos%20Principales%20-%20Carnes%20Rojas') {
     visualizedText = 'Bebidas'
-  } else if (text == 'Platos%20Principales%20-%20Carnes%20Rojas') {
+  } else if (text == 'Bebidas%20sin%20Alcohol') {
     visualizedText = 'Platos Principales'
   }
 

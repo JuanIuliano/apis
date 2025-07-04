@@ -7,17 +7,51 @@ import { useStickyObserver } from '../../hooks/useIntersection'
 import { useState, useEffect } from 'react'
 import menuData from '../../assets/categories-dishes.json'
 import { DishModal } from './dishModal'
+import { apiFetch } from '../../services/api'
+
 // import { DishModal } from '../../../public/categories-dishes.json'
 
 export function Main() {
   const { isSticky, stickyRef } = useStickyObserver()
   const [dish_, setDish] = useState(null)
-  const [menu, setMenu] = useState([])
+  const [menu, setMenu] = useState({
+    entrantes: [],
+    carnesRojas: [],
+    carnesBlancas: [],
+    pescados: [],
+    pastas: [],
+    postres: [],
+    bebidasSinAlcohol: [],
+    bebidasConAlcohol: []
+  })
 
   useEffect(() => {
-    setMenu(menuData)
-  }, [])
+    Promise.all([
+      apiFetch("/dishes?category=Entrantes"),
+      apiFetch("/dishes?category=Ensaladas"),
+      apiFetch("/dishes?category=Platos Principales - Carnes Rojas"),
+      apiFetch("/dishes?category=Platos Principales - Carnes Blancas"),
+      apiFetch("/dishes?category=Platos Principales - Pescado"),
+      apiFetch("/dishes?category=Pastas"),
+      apiFetch("/dishes?category=Postres"),
+      apiFetch("/dishes?category=Bebidas sin Alcohol"),
+      apiFetch("/dishes?category=Bebidas con Alcohol"),
 
+    ]).then(([entrantes, ensaladas, carnesRojas, carnesBlancas, pescados, pastas, postres, bebidasSinAlcohol, bebidasConAlcohol]) => {
+      setMenu({
+        entrantes,
+        ensaladas,
+        carnesRojas,
+        carnesBlancas,
+        pescados,
+        pastas,
+        postres,
+        bebidasSinAlcohol,
+        bebidasConAlcohol
+      })
+    })
+  }, [])
+  console.log(menu)
   return (
     <div className="scroll-smooth">
       <Hero></Hero>
@@ -33,22 +67,18 @@ export function Main() {
           <DishModal plato={dish_} onClose={() => setDish(null)}></DishModal>
         )}
         <main className="bg-primary flex flex-col content-center border-r-2 max-w-6xl p-8 border-transparent md:border-accent">
-          {menu.map((categoryData, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              id={categoryData.category.toLowerCase()}
-              className="scroll-mt-[100px]"
-            >
+          {Object.entries(menu).map(([categoryKey, dishes]) => (
+            <div key={categoryKey} id={categoryKey} className="scroll-mt-[100px]">
               <h2 className="text-3xl text-center font-tittle text-text mb-5">
-                {categoryData.category}
+                {categoryKey}
               </h2>
               <div className="flex flex-row flex-wrap justify-center gap-10 mb-5 border-r-2 border-transparent">
-                {categoryData.items.map((dish, dishIndex) => (
+                {dishes.map((dish, dishIndex) => (
                   <DishCard
                     key={dishIndex}
                     setDish={setDish}
                     dish={dish}
-                  ></DishCard>
+                  />
                 ))}
               </div>
             </div>
