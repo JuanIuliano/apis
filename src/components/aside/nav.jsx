@@ -9,10 +9,10 @@ export function Navbar() {
     >
       <NavButton text="Entrantes"></NavButton>
       <NavButton text="Ensaladas"></NavButton>
-      <NavButton text="Platos%20Principales%20-%20Carnes%20Rojas"></NavButton>
+      <NavButton text="CarnesRojas"></NavButton>
       <NavButton text="Pastas"></NavButton>
       <NavButton text="Postres"></NavButton>
-      <NavButton text="Bebidas%20sin%20Alcohol"></NavButton>
+      <NavButton text="BebidasSinAlcohol"></NavButton>
     </nav>
   )
 }

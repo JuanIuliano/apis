@@ -6,10 +6,10 @@ export function NavButton({ text, bg = 'secondary' }) {
 
   let visualizedText = text
 
-  if (text == 'Platos%20Principales%20-%20Carnes%20Rojas') {
-    visualizedText = 'Bebidas'
-  } else if (text == 'Bebidas%20sin%20Alcohol') {
+  if (text == 'CarnesRojas') {
     visualizedText = 'Platos Principales'
+  } else if (text == 'BebidasSinAlcohol') {
+    visualizedText = 'Bebidas'
   }
 
   return (

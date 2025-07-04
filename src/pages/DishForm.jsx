@@ -6,9 +6,9 @@ import { apiFetch } from "../services/api";
 const CATEGORY_OPTIONS = [
   "Entrantes",
   "Ensaladas",
-  "Platos%20principales%20-%20Carnes%20Rojas",
-  "Platos principales - Carnes Blancas",
-  "Platos principales - Pescado",
+  "Platos Principales - Carnes Rojas",
+  "Platos Principales - Carnes Blancas",
+  "Platos Principales - Pescado",
   "Pastas",
   "Postres",
   "Bebidas sin Alcohol",

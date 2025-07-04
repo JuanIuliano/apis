@@ -50,21 +50,26 @@ export function MainAdmin() {
   };
   console.log(menu)
   return (
-    <div className='mx-auto'>
-      <div className='flex flex-row p-4'>
-        <button className="bg-neutral-500 text-white px-4 py-2 rounded hover:bg-neutral-600" onClick={handleLogout}>Salir</button>
-        {(superAdmin == true) ? <Link to="/admin/usuarios">
-          <button className="bg-neutral-500 text-white px-4 py-2 rounded hover:bg-neutral-600">Usuarios</button>
-        </Link> : ''}
+    <div className='w-full mx-auto'>
+      <div className='flex flex-row flex-wrap justify-between items-center'>
+        <h3 className="font-semibold text-2xl ml-4">Panel platos</h3>
+        <div className='flex flex-row justify-end p-4 gap-4'>
+          <button className="bg-neutral-500 py-2 px-4 text-white rounded hover:bg-neutral-600" onClick={handleLogout}>Salir</button>
+          {(superAdmin == true) ? <Link to="/admin/usuarios" className="bg-neutral-500 py-2 px-4 text-white rounded hover:bg-neutral-600">
+            <button >Usuarios</button>
+          </Link> : ''}
 
-        <Link
-            to="/admin/platos/new"
-        >
-            <button className="bg-green-600 text-white m-8 p-2 rounded hover:bg-green-500">Agregar plato</button>
-            
-        </Link>
+          <Link
+              to="/admin/platos/new"
+              className="bg-green-600 py-2 px-4 text-white rounded hover:bg-green-700"
+          >
+              <button>Agregar plato</button>
+              
+          </Link>
+        </div>
       </div>
       
+      <h2 className="text-3xl text-center p-6 mb-10">Administrar Platos</h2>
       <main className="flex flex-row flex-wrap justify-center gap-10 mb-5 border-r-2 border-transparent max-w-7xl mx-auto">
         
         {menu.map((data, index) => (
